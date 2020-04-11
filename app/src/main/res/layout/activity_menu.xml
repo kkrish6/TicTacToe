@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".MenuActivity">
+
+    <Button
+        android:id="@+id/btn_singlePlayer"
+        android:layout_width="@dimen/width_menu_button"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_red_light"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:text="@string/single_Player"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/size_menu_button"
+        android:onClick="startGame_SinglePlayer"
+        />
+
+    <Button
+        android:id="@+id/btn_online"
+        android:layout_width="@dimen/width_menu_button"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_red_light"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:text="@string/online"
+        android:textColor="#FFFFFF"
+        android:onClick="startGame_online"
+        android:textSize="@dimen/size_menu_button" />
+
+    <Button
+
+        android:id="@+id/btn_about"
+        android:layout_width="@dimen/width_menu_button"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_red_light"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:text="@string/about"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/size_menu_button"
+        android:onClick="ShowAboutNote"/>
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="@dimen/width_menu_button"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_red_light"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:text="@string/exit"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/size_menu_button"
+        android:onClick="EndGame"
+
+
+        />
+
+    <Button
+
+    android:id="@+id/btn_stn"
+    android:layout_width="@dimen/width_menu_button"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="20dp"
+    android:background="@android:color/holo_red_light"
+    android:paddingLeft="20dp"
+    android:paddingTop="10dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="10dp"
+    android:text="stone paper scissor"
+    android:textColor="#FFFFFF"
+    android:textSize="@dimen/size_menu_button"
+    android:onClick="stn"/>
+
+
+</LinearLayout>
