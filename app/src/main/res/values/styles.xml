@@ -16,6 +16,10 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
+
+
+
+
     <string name="about_note">
         a small attempt by KKRISH N A
         \nInstagram id - kkrish_n

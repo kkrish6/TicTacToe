@@ -5,5 +5,15 @@
     <string name="about">About</string>
     <string name="exit">Exit</string>
     <string name="back">Back</string>
+    <string name="let_s_see_who_wins">Let\'s see who wins.</string>
+    <string name="good_luck">good luck!</string>
+    <string name="scissors">SCISSORS</string>
+    <string name="paper">PAPER</string>
+    <string name="rock">ROCK</string>
+    <string name="your_score_0_computer_score_0">Your Score: 0 Computer Score: 0</string>
+    <string name="computer_choice">COMPUTER CHOICE</string>
+    <string name="your_choice">YOUR CHOICE</string>
+    <string name="todo">TODO</string>
+
 </resources>
 

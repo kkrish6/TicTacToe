@@ -10,6 +10,8 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+
+
 public class MenuActivity extends AppCompatActivity {
 
     @Override
@@ -32,7 +34,7 @@ public class MenuActivity extends AppCompatActivity {
 
     public void stn(View view) {
         Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse("https://kkrish6.github.io/stone-paper/");
+        i.setData(Uri.parse("https://kkrish6.github.io/kkrish6.githyb.io/"));
         startActivity(i);
     }
 }
