@@ -31,6 +31,10 @@ public class MenuActivity extends AppCompatActivity {
         Intent i =new Intent (this,AboutActivity.class);
         startActivity(i);
     }
+    public  void startGameonline(View view){
+        Intent i = new Intent(this,OnlineLoginActivity.class);
+        startActivity(i);
+    }
 
     public void stn(View view) {
         Intent i = new Intent(Intent.ACTION_VIEW);

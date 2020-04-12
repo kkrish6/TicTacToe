@@ -42,7 +42,7 @@
         android:paddingBottom="10dp"
         android:text="@string/online"
         android:textColor="#FFFFFF"
-        android:onClick="startGame_online"
+        android:onClick="startGameonline"
         android:textSize="@dimen/size_menu_button" />
 
 
