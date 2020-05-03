@@ -4,6 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnlineGameActivity">
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".GameActivity">
 
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="@dimen/size_game_board"
+        android:layout_height="@dimen/size_game_board"
+        android:background="@drawable/board_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp">
+
+            <ImageView
+                android:id="@+id/iv_11"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
+            <ImageView
+                android:id="@+id/iv_12"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
+            <ImageView
+                android:id="@+id/iv_13"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp">
+
+            <ImageView
+                android:id="@+id/iv_21"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
+            <ImageView
+                android:id="@+id/iv_22"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
+            <ImageView
+                android:id="@+id/iv_23"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp">
+
+            <ImageView
+                android:id="@+id/iv_31"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
+            <ImageView
+                android:id="@+id/iv_32"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
+            <ImageView
+                android:id="@+id/iv_33"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tvPlayer1"
+        android:layout_width="111dp"
+        android:layout_height="21dp"
+        android:text="Player 1"
+        android:textAlignment="center"
+        android:textColor="#21abcd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlayer2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Player 2"
+        android:textAlignment="center"
+        android:textColor="#21abcd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tableLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

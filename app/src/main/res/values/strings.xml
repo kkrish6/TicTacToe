@@ -14,6 +14,9 @@
     <string name="computer_choice">COMPUTER CHOICE</string>
     <string name="your_choice">YOUR CHOICE</string>
     <string name="todo">TODO</string>
+    <string name="id">ID</string>
+    <string name="send_request_to">Send request to</string>
+    <string name="accept_request_from">Accept request from</string>
 
 </resources>
 
