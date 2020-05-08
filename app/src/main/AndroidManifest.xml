@@ -12,27 +12,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OnlineGameActivity">
+        <activity android:name=".fastactivity"></activity>
+        <activity
+            android:name=".ui.login.fast"
+            android:label="@string/title_activity_fast" />
+        <activity android:name=".searchActivity" />
+        <activity android:name=".OnlineGameActivity" />
+        <activity android:name=".OnlineLoginActivity">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="example.com" android:scheme="http"
-                    android:pathPrefix="/applinks"/>
-                <data android:host="example.com" android:scheme="https"
-                    android:pathPrefix="/applinks"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="example.com"
+                    android:pathPrefix="/applinks"
+                    android:scheme="http" />
+                <data
+                    android:host="example.com"
+                    android:pathPrefix="/applinks"
+                    android:scheme="https" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="kktictactoeonline.page.link" android:scheme="http"
-                    android:pathPrefix="/online"/>
-                <data android:host="kktictactoeonline.page.link" android:scheme="https"
-                    android:pathPrefix="/online"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="kktictactoeonline.page.link"
+                    android:pathPrefix="/online"
+                    android:scheme="http" />
+                <data
+                    android:host="kktictactoeonline.page.link"
+                    android:pathPrefix="/online"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
-
         <activity android:name=".AboutActivity" />
         <activity
             android:name=".MainActivity"
@@ -44,8 +61,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <activity
             android:name=".MenuActivity"

@@ -41,4 +41,9 @@ public class MenuActivity extends AppCompatActivity {
         i.setData(Uri.parse("https://kkrish6.github.io/kkrish6.githyb.io/"));
         startActivity(i);
     }
+    public void fast(View view){
+        Intent i = new Intent(MenuActivity.this,fastactivity.class);
+        startActivity(i);
+
+    }
 }

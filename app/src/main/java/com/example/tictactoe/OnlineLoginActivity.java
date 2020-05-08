@@ -50,6 +50,7 @@ public class OnlineLoginActivity extends AppCompatActivity {
     ArrayList<String> list_loginUsers = new ArrayList<String>();
     ArrayAdapter adpt;
 
+Button sh;
     ListView lv_requstedUsers;
     ArrayList<String> list_requestedUsers = new ArrayList<String>();
     ArrayAdapter reqUsersAdpt;
@@ -69,7 +70,19 @@ public class OnlineLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_login);
-
+        sh=findViewById(R.id.share);
+        sh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String sharebody="https://kktictactoeonline.page.link/online";
+                String sharesub="https://kktictactoeonline.page.link/online";
+                intent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
+                intent.putExtra(Intent.EXTRA_TEXT,sharebody);
+                startActivity(Intent.createChooser(intent,"share using"));
+            }
+        });
         tvSendRequest = (TextView) findViewById(R.id.tvSendRequest);
         tvAcceptRequest = (TextView) findViewById(R.id.tvAcceptRequest);
 
@@ -90,6 +103,14 @@ public class OnlineLoginActivity extends AppCompatActivity {
 
 
         tvUserID = (TextView) findViewById(R.id.tvLoginUser);
+        Button btn=findViewById(R.id.button3);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(OnlineLoginActivity.this,searchActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -152,7 +173,7 @@ public class OnlineLoginActivity extends AppCompatActivity {
             }
         });
 
-             checkforDynmaicLinks(viewPager);
+        checkforDynmaicLinks(viewPager);
 
     }
 

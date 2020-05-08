@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,13 +11,14 @@
     android:padding="5dp"
     tools:context=".MenuActivity">
 
+
     <Button
         android:id="@+id/btn_singlePlayer"
         android:layout_width="@dimen/width_menu_button"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@android:color/holo_red_light"
-        android:layout_marginTop="20dp"
+        android:onClick="startGame_SinglePlayer"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
@@ -26,34 +26,38 @@
         android:text="@string/single_Player"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_menu_button"
-        android:onClick="startGame_SinglePlayer"
-        />
+        fancy:layout_constraintBottom_toTopOf="@+id/btn_stn"
+        fancy:layout_constraintEnd_toStartOf="@+id/btn_online"
+        fancy:layout_constraintStart_toStartOf="parent"
+        fancy:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_online"
-        android:layout_width="@dimen/width_menu_button"
-        android:layout_height="wrap_content"
+        android:layout_width="151dp"
+        android:layout_height="46dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         android:background="@android:color/holo_red_light"
+        android:onClick="startGameonline"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
         android:text="@string/online"
         android:textColor="#FFFFFF"
-        android:onClick="startGameonline"
-        android:textSize="@dimen/size_menu_button" />
-
+        android:textSize="@dimen/size_menu_button"
+        fancy:layout_constraintBottom_toTopOf="@+id/btn_about"
+        fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintStart_toStartOf="parent"
+        fancy:layout_constraintTop_toTopOf="parent" />
 
     <Button
 
         android:id="@+id/btn_stn"
-        android:layout_width="@dimen/width_menu_button"
-        android:layout_height="wrap_content"
+        android:layout_width="154dp"
+        android:layout_height="44dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         android:background="@android:color/holo_red_light"
+        android:onClick="stn"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
@@ -61,7 +65,11 @@
         android:text="stone paper scissor"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_menu_button"
-        android:onClick="stn"/>
+        fancy:layout_constraintBottom_toBottomOf="parent"
+        fancy:layout_constraintEnd_toStartOf="@+id/btn_about"
+        fancy:layout_constraintStart_toStartOf="parent"
+        fancy:layout_constraintTop_toTopOf="parent"
+        fancy:layout_constraintVertical_bias="0.735" />
 
     <Button
 
@@ -69,8 +77,8 @@
         android:layout_width="@dimen/width_menu_button"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         android:background="@android:color/holo_red_light"
+        android:onClick="ShowAboutNote"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
@@ -78,15 +86,20 @@
         android:text="@string/about"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_menu_button"
-        android:onClick="ShowAboutNote"/>
+        fancy:layout_constraintBottom_toBottomOf="parent"
+        fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintHorizontal_bias="0.507"
+        fancy:layout_constraintStart_toStartOf="parent"
+        fancy:layout_constraintTop_toTopOf="parent"
+        fancy:layout_constraintVertical_bias="0.727" />
 
     <Button
         android:id="@+id/btn_exit"
-        android:layout_width="@dimen/width_menu_button"
-        android:layout_height="wrap_content"
+        android:layout_width="136dp"
+        android:layout_height="39dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         android:background="@android:color/holo_red_light"
+        android:onClick="EndGame"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
@@ -94,12 +107,26 @@
         android:text="@string/exit"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_menu_button"
-        android:onClick="EndGame"
 
 
-        />
+        fancy:layout_constraintBottom_toBottomOf="parent"
+        fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintHorizontal_bias="0.482"
+        fancy:layout_constraintStart_toEndOf="@+id/btn_about"
+        fancy:layout_constraintTop_toTopOf="parent"
+        fancy:layout_constraintVertical_bias="0.733" />
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="146dp"
+        android:layout_height="48dp"
+        android:background="@android:color/holo_red_light"
+        android:onClick="fast"
+        android:text="Fast hands"
+        android:textColor="#FFFFFF"
+        fancy:layout_constraintBottom_toTopOf="@+id/btn_exit"
+        fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintStart_toEndOf="@+id/btn_online"
+        fancy:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-</LinearLayout>

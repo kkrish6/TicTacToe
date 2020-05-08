@@ -10,29 +10,33 @@
     tools:context=".OnlineLoginActivity">
 
 
-    <TextView
+
+
+    <EditText
         android:id="@+id/tvLoginUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/id"
-        android:textColor="#21abcd"
         android:textAlignment="center"
-        android:textSize="18sp" />
-
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="18sp"
+        android:background="@android:color/darker_gray"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:paddingTop="5dp"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:background="@android:color/darker_gray">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
             >
 
             <TextView
@@ -41,13 +45,23 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/send_request_to"
-                android:textColor="#21abcd"
-                android:textSize="12sp" />
+                android:textColor="@android:color/primary_text_dark_nodisable"
+                android:textSize="15sp" />
+
 
             <ListView
                 android:id="@+id/lv_loginUsers"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="549dp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="search"
+                />
+
+
         </LinearLayout>
 
 
@@ -57,6 +71,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
+            android:background="@android:color/holo_blue_light"
             >
 
             <TextView
@@ -65,13 +80,19 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/accept_request_from"
-                android:textColor="#21abcd"
-                android:textSize="12sp" />
+                android:textColor="@android:color/primary_text_dark_nodisable"
+                android:textSize="15sp" />
 
             <ListView
                 android:id="@+id/lv_requestedUsers"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="547dp" />
+
+            <Button
+                android:id="@+id/share"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:text="invite your friends here" />
         </LinearLayout>
     </LinearLayout>
 
