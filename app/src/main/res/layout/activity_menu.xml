@@ -9,13 +9,14 @@
     android:layout_weight="1"
     android:orientation="vertical"
     android:padding="5dp"
+    android:background="@android:color/holo_blue_light"
     tools:context=".MenuActivity">
 
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_singlePlayer"
-        android:layout_width="@dimen/width_menu_button"
-        android:layout_height="wrap_content"
+        android:layout_width="198dp"
+        android:layout_height="245dp"
         android:layout_gravity="center"
         android:background="@android:color/holo_red_light"
         android:onClick="startGame_SinglePlayer"
@@ -23,18 +24,21 @@
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
+        android:src="@drawable/offline"
         android:text="@string/single_Player"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_menu_button"
         fancy:layout_constraintBottom_toTopOf="@+id/btn_stn"
         fancy:layout_constraintEnd_toStartOf="@+id/btn_online"
+        fancy:layout_constraintHorizontal_bias="0.34"
         fancy:layout_constraintStart_toStartOf="parent"
-        fancy:layout_constraintTop_toTopOf="parent" />
+        fancy:layout_constraintTop_toTopOf="parent"
+        fancy:layout_constraintVertical_bias="0.375" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_online"
-        android:layout_width="151dp"
-        android:layout_height="46dp"
+        android:layout_width="215dp"
+        android:layout_height="208dp"
         android:layout_gravity="center"
         android:background="@android:color/holo_red_light"
         android:onClick="startGameonline"
@@ -42,19 +46,22 @@
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
+        android:src="@drawable/twoplay"
         android:text="@string/online"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_menu_button"
         fancy:layout_constraintBottom_toTopOf="@+id/btn_about"
         fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintHorizontal_bias="0.48"
         fancy:layout_constraintStart_toStartOf="parent"
-        fancy:layout_constraintTop_toTopOf="parent" />
+        fancy:layout_constraintTop_toTopOf="parent"
+        fancy:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <ImageButton
 
         android:id="@+id/btn_stn"
-        android:layout_width="154dp"
-        android:layout_height="44dp"
+        android:layout_width="200dp"
+        android:layout_height="181dp"
         android:layout_gravity="center"
         android:background="@android:color/holo_red_light"
         android:onClick="stn"
@@ -62,20 +69,22 @@
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
+        android:src="@drawable/stnpaper"
         android:text="stone paper scissor"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_menu_button"
         fancy:layout_constraintBottom_toBottomOf="parent"
         fancy:layout_constraintEnd_toStartOf="@+id/btn_about"
+        fancy:layout_constraintHorizontal_bias="0.511"
         fancy:layout_constraintStart_toStartOf="parent"
         fancy:layout_constraintTop_toTopOf="parent"
-        fancy:layout_constraintVertical_bias="0.735" />
+        fancy:layout_constraintVertical_bias="0.977" />
 
-    <Button
+    <ImageButton
 
         android:id="@+id/btn_about"
-        android:layout_width="@dimen/width_menu_button"
-        android:layout_height="wrap_content"
+        android:layout_width="214dp"
+        android:layout_height="190dp"
         android:layout_gravity="center"
         android:background="@android:color/holo_red_light"
         android:onClick="ShowAboutNote"
@@ -83,50 +92,54 @@
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
+        android:src="@drawable/aboutimage"
         android:text="@string/about"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/size_menu_button"
         fancy:layout_constraintBottom_toBottomOf="parent"
         fancy:layout_constraintEnd_toEndOf="parent"
-        fancy:layout_constraintHorizontal_bias="0.507"
+        fancy:layout_constraintHorizontal_bias="0.481"
         fancy:layout_constraintStart_toStartOf="parent"
         fancy:layout_constraintTop_toTopOf="parent"
-        fancy:layout_constraintVertical_bias="0.727" />
+        fancy:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_exit"
         android:layout_width="136dp"
         android:layout_height="39dp"
         android:layout_gravity="center"
-        android:background="@android:color/holo_red_light"
+        android:background="@android:color/darker_gray"
         android:onClick="EndGame"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
         android:text="@string/exit"
-        android:textColor="#FFFFFF"
+        android:textColor="@android:color/background_dark"
         android:textSize="@dimen/size_menu_button"
 
 
         fancy:layout_constraintBottom_toBottomOf="parent"
         fancy:layout_constraintEnd_toEndOf="parent"
-        fancy:layout_constraintHorizontal_bias="0.482"
+        fancy:layout_constraintHorizontal_bias="0.954"
         fancy:layout_constraintStart_toEndOf="@+id/btn_about"
         fancy:layout_constraintTop_toTopOf="parent"
-        fancy:layout_constraintVertical_bias="0.733" />
+        fancy:layout_constraintVertical_bias="0.956" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button5"
-        android:layout_width="146dp"
-        android:layout_height="48dp"
+        android:layout_width="217dp"
+        android:layout_height="201dp"
         android:background="@android:color/holo_red_light"
         android:onClick="fast"
+        android:src="@drawable/fast"
         android:text="Fast hands"
         android:textColor="#FFFFFF"
         fancy:layout_constraintBottom_toTopOf="@+id/btn_exit"
         fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintHorizontal_bias="0.313"
         fancy:layout_constraintStart_toEndOf="@+id/btn_online"
-        fancy:layout_constraintTop_toTopOf="parent" />
+        fancy:layout_constraintTop_toTopOf="parent"
+        fancy:layout_constraintVertical_bias="0.053" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

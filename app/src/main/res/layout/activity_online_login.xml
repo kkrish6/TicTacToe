@@ -19,9 +19,9 @@
         android:fontFamily="sans-serif-condensed"
         android:text="@string/id"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="@android:color/holo_blue_bright"
         android:textSize="18sp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/holo_red_light"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -29,14 +29,14 @@
         android:orientation="horizontal"
         android:paddingTop="5dp"
         android:baselineAligned="false"
-        android:background="@android:color/darker_gray">
+        android:background="@android:color/holo_red_light">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:background="@android:color/holo_red_light"
+            android:background="@android:color/holo_blue_light"
             >
 
             <TextView
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="search"
-                />
+                android:textColor="@android:color/holo_red_light" />
 
 
         </LinearLayout>
@@ -92,7 +92,8 @@
                 android:id="@+id/share"
                 android:layout_width="match_parent"
                 android:layout_height="63dp"
-                android:text="invite your friends here" />
+                android:text="invite your friends here"
+                android:textColor="@android:color/holo_red_light" />
         </LinearLayout>
     </LinearLayout>
 

@@ -5,21 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/background_dark"
+    android:background="@android:color/holo_orange_light"
     tools:context=".AboutActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="450dp"
-        android:layout_height="319dp"
-        android:fontFamily="casual"
+        android:layout_width="390dp"
+        android:layout_height="612dp"
 
-        android:text="@string/about_note"
-        android:textAlignment="center"
+        android:text="        INFO:\nIn this application you can play TicTacToe,Fast Screen Tapping Game and also Stone Paper Scissors.TicTacToe is available with multiplayer mode by which you can play with your friends online and can invite them to the game\n
+        Developed by:kkrish N A \ncontact through:\nE-mail:bestkkrish@gmail.com\nInstagram:https://www.instagram.com/kkrish_n/"
 
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="#21abcd"
-        android:textSize="25sp"
+
+        android:textColor="@android:color/background_dark"
+        android:textSize="27sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,10 +31,12 @@
         android:layout_width="89dp"
         android:layout_height="38dp"
         android:onClick="backtomain"
+        android:background="@android:color/darker_gray"
         android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="28dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

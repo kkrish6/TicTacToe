@@ -100,6 +100,164 @@ public class GameActivity extends AppCompatActivity {
             }
             gamestate=3;
         }else{
+
+            if((player1.contains(1)&&player1.contains(2))&&emptyBlocks.contains(3)){
+
+                  ImageView selectedImage=(ImageView) findViewById(R.id.iv_13);
+
+
+                  PlayGame(3,selectedImage);
+            }
+            else if((player1.contains(2)&&player1.contains(3))&&emptyBlocks.contains(1)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_11);
+
+
+                PlayGame(1,selectedImage);
+            }
+            else if((player1.contains(1)&&player1.contains(3))&&emptyBlocks.contains(2)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_12);
+
+
+                PlayGame(2,selectedImage);
+            }
+
+            else if((player1.contains(4)&&player1.contains(5))&&emptyBlocks.contains(6)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_23);
+
+
+                PlayGame(6,selectedImage);
+            }
+            else if((player1.contains(4)&&player1.contains(6))&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player1.contains(5)&&player1.contains(6))&&emptyBlocks.contains(4)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_21);
+
+
+                PlayGame(4,selectedImage);
+            }
+
+            else if((player1.contains(7)&&player1.contains(8))&&emptyBlocks.contains(9)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_33);
+
+
+                PlayGame(9,selectedImage);
+            }
+            else if((player1.contains(7)&&player1.contains(9))&&emptyBlocks.contains(8)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_32);
+
+
+                PlayGame(8,selectedImage);
+            }
+            else if((player1.contains(8)&&player1.contains(9))&&emptyBlocks.contains(7)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_31);
+
+
+                PlayGame(7,selectedImage);
+            }
+
+            else if((player1.contains(1)&&player1.contains(4))&&emptyBlocks.contains(7)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_31);
+
+
+                PlayGame(7,selectedImage);
+            }
+            else if((player1.contains(4)&&player1.contains(7))&&emptyBlocks.contains(1)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_11);
+
+
+                PlayGame(1,selectedImage);
+            }
+            else if((player1.contains(1)&&player1.contains(7))&&emptyBlocks.contains(4)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_21);
+
+
+                PlayGame(4,selectedImage);
+            }
+
+            else if((player1.contains(2)&&player1.contains(5))&&emptyBlocks.contains(8)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_32);
+
+
+                PlayGame(8,selectedImage);
+            }
+            else if((player1.contains(2)&&player1.contains(8))&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player1.contains(5)&&player1.contains(8))&&emptyBlocks.contains(2)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_12);
+
+
+                PlayGame(2,selectedImage);
+            }
+            else if((player1.contains(3)&&player1.contains(6))&&emptyBlocks.contains(9)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_33);
+
+
+                PlayGame(9,selectedImage);
+            }
+            else if((player1.contains(3)&&player1.contains(9))&&emptyBlocks.contains(6)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_23);
+
+
+                PlayGame(6,selectedImage);
+            }
+            else if((player1.contains(6)&&player1.contains(9))&&emptyBlocks.contains(3)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_13);
+
+
+                PlayGame(3,selectedImage);
+            }
+            else if((player1.contains(1)&&player1.contains(5))&&emptyBlocks.contains(9)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_33);
+
+
+                PlayGame(9,selectedImage);
+            }
+            else if((player1.contains(1)&&player1.contains(9))&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player1.contains(5)&&player1.contains(9))&&emptyBlocks.contains(1)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_11);
+
+
+                PlayGame(1,selectedImage);
+            }
+            else if((player1.contains(3)&&player1.contains(7))&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player1.contains(3)&&player1.contains(5))&&emptyBlocks.contains(7)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_31);
+
+
+                PlayGame(7,selectedImage);
+            }
+            else if((player1.contains(5)&&player1.contains(7))&&emptyBlocks.contains(3)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_13);
+
+
+                PlayGame(3,selectedImage);
+            }
+
+
+
+
+
+
+
+            else{
             Random r=new Random();
             int randomIndex =r.nextInt(emptyBlocks.size());
             int selectedBlock = emptyBlocks.get(randomIndex);
@@ -118,7 +276,7 @@ public class GameActivity extends AppCompatActivity {
                 case 8:selectedImage = (ImageView) findViewById(R.id.iv_32);break;
                 case 9:selectedImage = (ImageView) findViewById(R.id.iv_33);break;
             }
-            PlayGame(selectedBlock,selectedImage);
+            PlayGame(selectedBlock,selectedImage);}
         }
     }
 

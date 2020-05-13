@@ -10,6 +10,7 @@
      android:ems="10"
      android:inputType="textEmailAddress"
      android:hint="Email"
+     android:textColor="@android:color/holo_blue_light"
      />
     <EditText
         android:layout_width="match_parent"
@@ -18,5 +19,6 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="Password"
+        android:textColor="@android:color/holo_blue_light"
         />
 </LinearLayout>
