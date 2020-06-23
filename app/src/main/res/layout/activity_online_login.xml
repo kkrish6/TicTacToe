@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,7 +9,6 @@
     android:orientation="vertical"
     android:drawable="@android:color/primary_text_light"
     tools:context=".OnlineLoginActivity">
-
 
 
 
@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:background="@android:color/holo_blue_light"
+            android:background="#40e0d0"
             >
 
             <TextView
@@ -45,8 +45,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/send_request_to"
-                android:textColor="@android:color/primary_text_dark_nodisable"
-                android:textSize="15sp" />
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp" />
 
 
             <ListView
@@ -71,7 +71,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:background="@android:color/holo_blue_light"
+            android:background="#40e0d0"
             >
 
             <TextView
@@ -80,8 +80,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/accept_request_from"
-                android:textColor="@android:color/primary_text_dark_nodisable"
-                android:textSize="15sp" />
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp" />
 
             <ListView
                 android:id="@+id/lv_requestedUsers"
@@ -95,8 +95,8 @@
                 android:text="invite your friends here"
                 android:textColor="@android:color/holo_red_light" />
         </LinearLayout>
-    </LinearLayout>
 
+    </LinearLayout>
 
 
 

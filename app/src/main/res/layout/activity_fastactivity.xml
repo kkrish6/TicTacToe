@@ -13,38 +13,36 @@
 
         android:paddingLeft="160dp"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/b_click"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="15dp" />
 
     <TextView
         android:id="@+id/tv_clicks"
         android:layout_width="match_parent"
         android:layout_height="28dp"
+        android:paddingLeft="160dp"
         android:textSize="25sp"
-android:paddingLeft="160dp"
 
         app:layout_constraintBottom_toTopOf="@+id/b_start"
         app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
+        app:layout_constraintVertical_bias="0.896" />
 
     <Button
         android:id="@+id/b_click"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Click Here"
+        android:layout_width="830dp"
+        android:layout_height="480dp"
         android:background="@android:color/holo_red_light"
+        android:text="                                     Click Here"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_clicks"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832" />
+        app:layout_constraintVertical_bias="0.71" />
 
     <Button
         android:id="@+id/b_start"

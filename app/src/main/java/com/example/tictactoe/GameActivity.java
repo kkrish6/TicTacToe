@@ -9,6 +9,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -16,11 +17,15 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
     int gamestate;
+    TextView score2;
+    Integer oppt=0;
+    Integer youpt=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        score2=findViewById(R.id.score2);
 
         gamestate = 1;
     }
@@ -68,6 +73,9 @@ public class GameActivity extends AppCompatActivity {
     ArrayList<Integer> player1 = new ArrayList<Integer>();
     ArrayList<Integer> player2 = new ArrayList<Integer>();
     private void PlayGame(int selectedBlock, ImageView selectedImage) {
+
+        CheckWinner();
+
         if(gamestate==1){
             if(activePlayer==1){
                 selectedImage.setImageResource(R.drawable.ttt_x);
@@ -101,7 +109,169 @@ public class GameActivity extends AppCompatActivity {
             gamestate=3;
         }else{
 
-            if((player1.contains(1)&&player1.contains(2))&&emptyBlocks.contains(3)){
+            if((player2.contains(1)&&player2.contains(2)&&emptyBlocks.contains(3))){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_13);
+
+
+                PlayGame(3,selectedImage);
+            }
+            else if((player2.contains(2)&&player2.contains(3))&&emptyBlocks.contains(1)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_11);
+
+
+                PlayGame(1,selectedImage);
+            }
+            else if((player2.contains(1)&&player2.contains(3))&&emptyBlocks.contains(2)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_12);
+
+
+                PlayGame(2,selectedImage);
+            }
+
+            else if((player2.contains(4)&&player2.contains(5))&&emptyBlocks.contains(6)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_23);
+
+
+                PlayGame(6,selectedImage);
+            }
+            else if((player2.contains(4)&&player2.contains(6))&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player2.contains(5)&&player2.contains(6))&&emptyBlocks.contains(4)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_21);
+
+
+                PlayGame(4,selectedImage);
+            }
+
+            else if((player2.contains(7)&&player2.contains(8))&&emptyBlocks.contains(9)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_33);
+
+
+                PlayGame(9,selectedImage);
+            }
+            else if((player2.contains(7)&&player2.contains(9))&&emptyBlocks.contains(8)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_32);
+
+
+                PlayGame(8,selectedImage);
+            }
+            else if((player2.contains(8)&&player2.contains(9))&&emptyBlocks.contains(7)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_31);
+
+
+                PlayGame(7,selectedImage);
+            }
+
+            else if((player2.contains(1)&&player2.contains(4))&&emptyBlocks.contains(7)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_31);
+
+
+                PlayGame(7,selectedImage);
+            }
+            else if((player2.contains(4)&&player2.contains(7))&&emptyBlocks.contains(1)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_11);
+
+
+                PlayGame(1,selectedImage);
+            }
+            else if((player2.contains(1)&&player2.contains(7))&&emptyBlocks.contains(4)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_21);
+
+
+                PlayGame(4,selectedImage);
+            }
+
+            else if((player2.contains(2)&&player2.contains(5))&&emptyBlocks.contains(8)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_32);
+
+
+                PlayGame(8,selectedImage);
+            }
+            else if((player2.contains(2)&&player2.contains(8))&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player2.contains(5)&&player2.contains(8))&&emptyBlocks.contains(2)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_12);
+
+
+                PlayGame(2,selectedImage);
+            }
+            else if((player2.contains(3)&&player2.contains(6))&&emptyBlocks.contains(9)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_33);
+
+
+                PlayGame(9,selectedImage);
+            }
+            else if((player2.contains(3)&&player2.contains(9))&&emptyBlocks.contains(6)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_23);
+
+
+                PlayGame(6,selectedImage);
+            }
+            else if((player2.contains(6)&&player2.contains(9))&&emptyBlocks.contains(3)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_13);
+
+
+                PlayGame(3,selectedImage);
+            }
+            else if((player2.contains(1)&&player2.contains(5))&&emptyBlocks.contains(9)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_33);
+
+
+                PlayGame(9,selectedImage);
+            }
+            else if((player2.contains(1)&&player2.contains(9))&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player2.contains(5)&&player2.contains(9))&&emptyBlocks.contains(1)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_11);
+
+
+                PlayGame(1,selectedImage);
+            }
+            else if((player2.contains(3)&&player2.contains(7))&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player2.contains(3)&&player2.contains(5))&&emptyBlocks.contains(7)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_31);
+
+
+                PlayGame(7,selectedImage);
+            }
+            else if((player2.contains(5)&&player2.contains(7))&&emptyBlocks.contains(3)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_13);
+
+
+                PlayGame(3,selectedImage);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            else if((player1.contains(1)&&player1.contains(2))&&emptyBlocks.contains(3)){
 
                   ImageView selectedImage=(ImageView) findViewById(R.id.iv_13);
 
@@ -250,6 +420,22 @@ public class GameActivity extends AppCompatActivity {
 
                 PlayGame(3,selectedImage);
             }
+            else if(player1.contains(2)&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if((player1.contains(2)&&player1.contains(3))&&player2.contains(1)&&emptyBlocks.contains(5)){
+                ImageView selectedImage=(ImageView) findViewById(R.id.iv_22);
+
+
+                PlayGame(5,selectedImage);
+            }
+            else if(emptyBlocks.isEmpty())
+            {
+                ResetGame();
+            }
 
 
 
@@ -356,10 +542,24 @@ public class GameActivity extends AppCompatActivity {
         if(winner !=0 && gamestate ==1){
             if(winner==1){
                 showAlert("You win the game");
+                youpt++;
+
+
             }else if (winner==2){
                 showAlert("Player 2 is Winner");
+                oppt++;
+
             }
+            else{
+                AlertDialog.Builder b =new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+                showAlert("Draw");
+
+            }
+
             gamestate=2;
+            score2.setText("your point:"+youpt+"   "+"opponent point"+oppt);
+
+
         }
 
     }

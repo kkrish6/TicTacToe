@@ -22,7 +22,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class OnlineGameActivity extends AppCompatActivity {
-
+Integer yourpts=0;
+Integer opppt=0;
+TextView score;
     TextView tvPlayer1, tvPlayer2;
 
     String playerSession = "";
@@ -45,7 +47,7 @@ public class OnlineGameActivity extends AppCompatActivity {
         otherPlayer = getIntent().getExtras().get("other_player").toString();
         requestType = getIntent().getExtras().get("request_type").toString();
         playerSession = getIntent().getExtras().get("player_session").toString();
-
+        score=findViewById(R.id.score);
         tvPlayer1 = (TextView) findViewById(R.id.tvPlayer1);
         tvPlayer2 = (TextView) findViewById(R.id.tvPlayer2);
 
@@ -228,10 +230,15 @@ public class OnlineGameActivity extends AppCompatActivity {
         if(winner != 0 && gameState == 1){
             if(winner == 1){
                 ShowAlert(otherPlayer +" is winner");
+                opppt++;
+
             }else if(winner == 2){
                 ShowAlert("You won the game");
+                yourpts++;
+
             }
             gameState = 2;
+            score.setText("your points"+yourpts+"   "+"opponent score"+opppt);
         }
 
         ArrayList<Integer> emptyBlocks = new ArrayList<Integer>();

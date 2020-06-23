@@ -12,6 +12,7 @@
 
 
     <TableLayout
+        android:id="@+id/tableLayout2"
         android:layout_width="@dimen/size_game_board"
         android:layout_height="@dimen/size_game_board"
         android:background="@drawable/board_white"
@@ -24,86 +25,99 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="3dp">
+
             <ImageView
                 android:id="@+id/iv_11"
-                android:layout_margin="3dp"
                 android:layout_width="@dimen/size_player_sign_image"
                 android:layout_height="@dimen/size_player_sign_image"
-                android:onClick="GameBoardClick"
-                />
-        <ImageView
-            android:id="@+id/iv_12"
-            android:layout_margin="3dp"
-            android:layout_width="@dimen/size_player_sign_image"
-            android:layout_height="@dimen/size_player_sign_image"
-            android:onClick="GameBoardClick"
-            />
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
+            <ImageView
+                android:id="@+id/iv_12"
+                android:layout_width="@dimen/size_player_sign_image"
+                android:layout_height="@dimen/size_player_sign_image"
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
 
             <ImageView
                 android:id="@+id/iv_13"
-                android:layout_margin="3dp"
                 android:layout_width="@dimen/size_player_sign_image"
                 android:layout_height="@dimen/size_player_sign_image"
-                android:onClick="GameBoardClick"
-                />
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="3dp">
+
             <ImageView
                 android:id="@+id/iv_21"
-                android:layout_margin="3dp"
                 android:layout_width="@dimen/size_player_sign_image"
                 android:layout_height="@dimen/size_player_sign_image"
-                android:onClick="GameBoardClick"
-                />
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
             <ImageView
                 android:id="@+id/iv_22"
-                android:layout_margin="3dp"
                 android:layout_width="@dimen/size_player_sign_image"
                 android:layout_height="@dimen/size_player_sign_image"
-                android:onClick="GameBoardClick"
-                />
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
 
             <ImageView
                 android:id="@+id/iv_23"
-                android:layout_margin="3dp"
                 android:layout_width="@dimen/size_player_sign_image"
                 android:layout_height="@dimen/size_player_sign_image"
-                android:onClick="GameBoardClick"
-                />
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="3dp">
+
             <ImageView
                 android:id="@+id/iv_31"
-                android:layout_margin="3dp"
                 android:layout_width="@dimen/size_player_sign_image"
                 android:layout_height="@dimen/size_player_sign_image"
-                android:onClick="GameBoardClick"
-                />
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
+
             <ImageView
                 android:id="@+id/iv_32"
-                android:layout_margin="3dp"
                 android:layout_width="@dimen/size_player_sign_image"
                 android:layout_height="@dimen/size_player_sign_image"
-                android:onClick="GameBoardClick"
-                />
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
 
             <ImageView
                 android:id="@+id/iv_33"
-                android:layout_margin="3dp"
                 android:layout_width="@dimen/size_player_sign_image"
                 android:layout_height="@dimen/size_player_sign_image"
-                android:onClick="GameBoardClick"
-                />
+                android:layout_margin="3dp"
+                android:onClick="GameBoardClick" />
         </TableRow>
 
     </TableLayout>
+
+    <TextView
+        android:id="@+id/score2"
+        android:layout_width="615dp"
+        android:layout_height="26dp"
+        android:text="Score"
+
+
+
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
