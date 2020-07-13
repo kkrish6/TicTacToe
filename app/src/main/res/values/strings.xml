@@ -27,5 +27,11 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+
+        <string name="info">
+            INFO:\nIn this application you can play TicTacToe,Fast Screen Tapping Game and also Stone Paper Scissors.TicTacToe is available with multiplayer mode by which you can play with your friends online and can invite them to the game\n
+        Developed by:kkrish N A \ncontact through:\nE-mail:bestkkrish@gmail.com\nInstagram:click the link below</string>
+    <string name="insta"> <a href="https://www.instagram.com/kkrish_n/?hl=en">kkrish_n</a></string>
+
 </resources>
 

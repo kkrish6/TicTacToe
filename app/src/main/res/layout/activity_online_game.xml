@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    android:orientation="vertical"
     android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
     tools:context=".GameActivity">
 
 
@@ -127,13 +127,18 @@
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <TextView
-        android:id="@+id/score"
-        android:layout_width="142dp"
-        android:layout_height="45dp"
-        android:text="scores"
+        android:id="@+id/scoreOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" OverAll Online score:"
+        android:textSize="21sp"
+        android:textColor="@android:color/holo_red_light"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

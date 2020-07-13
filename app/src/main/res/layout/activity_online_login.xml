@@ -54,12 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="549dp" />
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="search"
-                android:textColor="@android:color/holo_red_light" />
+
 
 
         </LinearLayout>

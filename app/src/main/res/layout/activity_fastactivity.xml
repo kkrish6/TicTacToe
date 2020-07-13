@@ -32,21 +32,27 @@
 
     <Button
         android:id="@+id/b_click"
-        android:layout_width="830dp"
-        android:layout_height="480dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+
         android:background="@android:color/holo_red_light"
-        android:text="                                     Click Here"
-        android:textSize="40sp"
+        android:gravity="center"
+        android:text="Tap here fastly \nfind your count"
+        android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_clicks"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_time" />
 
     <Button
         android:id="@+id/b_start"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:background="@android:color/holo_blue_light"

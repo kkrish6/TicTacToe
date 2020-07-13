@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -22,6 +23,7 @@ public class MenuActivity extends AppCompatActivity {
     public void startGame_SinglePlayer(View view){
         Intent i=new Intent(this, GameActivity.class);
         startActivity(i);
+
     }
     public void EndGame(View view){
         int pid = android.os.Process.myPid();
@@ -29,7 +31,10 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void ShowAboutNote(View view){
         Intent i =new Intent (this,AboutActivity.class);
+
         startActivity(i);
+
+       overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
     public  void startGameonline(View view){
         Intent i = new Intent(this,OnlineLoginActivity.class);

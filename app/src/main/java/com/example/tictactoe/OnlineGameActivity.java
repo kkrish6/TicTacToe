@@ -22,11 +22,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class OnlineGameActivity extends AppCompatActivity {
-Integer yourpts=0;
-Integer opppt=0;
-TextView score;
+    Integer score1,score2;
     TextView tvPlayer1, tvPlayer2;
-
+ TextView onlinescore;
     String playerSession = "";
     String userName = "";
     String otherPlayer = "";
@@ -36,20 +34,71 @@ TextView score;
     int gameState = 0;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
+    DatabaseReference userRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_game);
+        onlinescore=findViewById(R.id.scoreOnline);
 
         userName = getIntent().getExtras().get("user_name").toString();
         loginUID = getIntent().getExtras().get("login_uid").toString();
         otherPlayer = getIntent().getExtras().get("other_player").toString();
         requestType = getIntent().getExtras().get("request_type").toString();
         playerSession = getIntent().getExtras().get("player_session").toString();
-        score=findViewById(R.id.score);
+
         tvPlayer1 = (TextView) findViewById(R.id.tvPlayer1);
         tvPlayer2 = (TextView) findViewById(R.id.tvPlayer2);
+        userRef =FirebaseDatabase.getInstance().getReference().child("users");
+        userRef.child(OnlineLoginActivity.UserName).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.hasChild("score"))
+                {
+                    String x = (String)dataSnapshot.child("score").getValue();
+                    score1 = Integer.parseInt(x);
+
+                }
+                else
+                {
+                    score1=0;
+                    userRef.child(OnlineLoginActivity.UserName).child("score").setValue(score1.toString());
+                }
+                onlinescore.setText("Overall Online Score:"+score1+"\t           Opponent Score:"+score2);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        userRef.child(otherPlayer).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.hasChild("score"))
+                {
+                    String x = (String)dataSnapshot.child("score").getValue();
+                    score2=Integer.parseInt(x);
+                }
+                else
+                {
+                    score2=0;
+                    userRef.child(otherPlayer).child("score").setValue(score2.toString());
+                }
+                onlinescore.setText("Overall Online Score:"+score1+"\t           Opponent Score:"+score2);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
 
         gameState = 1;
 
@@ -230,15 +279,19 @@ TextView score;
         if(winner != 0 && gameState == 1){
             if(winner == 1){
                 ShowAlert(otherPlayer +" is winner");
-                opppt++;
+                score2++;
+                userRef.child(otherPlayer).child("score").setValue(score2.toString());
 
             }else if(winner == 2){
                 ShowAlert("You won the game");
-                yourpts++;
+                score1++;
+                userRef.child(OnlineLoginActivity.UserName).child("score").setValue(score1.toString());
 
             }
+            onlinescore.setText("Overall Online Score:"+score1+"\tOpponent Score"+score2);
+
             gameState = 2;
-            score.setText("your points"+yourpts+"   "+"opponent score"+opppt);
+
         }
 
         ArrayList<Integer> emptyBlocks = new ArrayList<Integer>();

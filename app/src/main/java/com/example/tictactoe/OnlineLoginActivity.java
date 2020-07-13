@@ -56,7 +56,8 @@ Button sh;
     ArrayAdapter reqUsersAdpt;
 
     TextView tvUserID, tvSendRequest, tvAcceptRequest;
-    String LoginUserID, UserName, LoginUID;
+    String LoginUserID,LoginUID;
+    static String UserName;
 
     private FirebaseAnalytics mFirebaseAnalytics;
     private FirebaseAuth mAuth;
@@ -103,14 +104,7 @@ Button sh;
 
 
         tvUserID = (TextView) findViewById(R.id.tvLoginUser);
-        Button btn=findViewById(R.id.button3);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(OnlineLoginActivity.this,searchActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
 
 

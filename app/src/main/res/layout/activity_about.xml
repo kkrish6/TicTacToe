@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     android:background="@drawable/bluemenu"
     tools:context=".AboutActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="390dp"
-        android:layout_height="612dp"
-
-        android:text="        INFO:\nIn this application you can play TicTacToe,Fast Screen Tapping Game and also Stone Paper Scissors.TicTacToe is available with multiplayer mode by which you can play with your friends online and can invite them to the game\n
-        Developed by:kkrish N A \ncontact through:\nE-mail:bestkkrish@gmail.com\nInstagram:https://www.instagram.com/kkrish_n/"
+        android:id="@+id/textViewinsta"
+        android:layout_width="368dp"
+        android:layout_height="559dp"
+        android:onClick="goinsta"
+        android:text="@string/info"
 
 
         android:textColor="@android:color/background_light"
@@ -22,9 +22,10 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.389" />
 
     <Button
         android:id="@+id/back"
@@ -37,6 +38,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/instatext"
+        android:layout_width="358dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="180dp"
+        android:text="@string/insta"
+        android:textColor="@android:color/background_light"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.7" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

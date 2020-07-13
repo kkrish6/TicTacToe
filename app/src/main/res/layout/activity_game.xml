@@ -106,12 +106,12 @@
 
     <TextView
         android:id="@+id/score2"
-        android:layout_width="615dp"
-        android:layout_height="26dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|center_horizontal"
+
+
         android:text="Score"
-
-
-
         android:textColor="@android:color/holo_red_light"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
         app:layout_constraintEnd_toEndOf="parent"
