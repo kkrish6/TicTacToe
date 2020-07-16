@@ -48,7 +48,8 @@ public class OnlineLoginActivity extends AppCompatActivity {
 
     ListView lv_loginUsers;
     ArrayList<String> list_loginUsers = new ArrayList<String>();
-    ArrayAdapter adpt;
+    DatabaseReference userref;
+    String value = "";
 
 Button sh;
     ListView lv_requstedUsers;
@@ -63,6 +64,7 @@ Button sh;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ViewPager viewPager;
+    UserListAdapter adpt;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
 
@@ -84,6 +86,7 @@ Button sh;
                 startActivity(Intent.createChooser(intent,"share using"));
             }
         });
+        userref=FirebaseDatabase.getInstance().getReference().child("users");
         tvSendRequest = (TextView) findViewById(R.id.tvSendRequest);
         tvAcceptRequest = (TextView) findViewById(R.id.tvAcceptRequest);
 
@@ -94,7 +97,7 @@ Button sh;
         mAuth = FirebaseAuth.getInstance();
 
         lv_loginUsers = (ListView) findViewById(R.id.lv_loginUsers);
-        adpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list_loginUsers);
+        adpt = new UserListAdapter(this,list_loginUsers);
         lv_loginUsers.setAdapter(adpt);
 
 
@@ -104,7 +107,6 @@ Button sh;
 
 
         tvUserID = (TextView) findViewById(R.id.tvLoginUser);
-
 
 
 
@@ -121,6 +123,7 @@ Button sh;
                     tvUserID.setText(LoginUserID);
                     UserName = convertEmailToString(LoginUserID);
                     UserName = UserName.replace(".", "");
+                    userref.child(UserName).child("status").setValue("online");
                     myRef.child("users").child(UserName).child("request").setValue(LoginUID);
 
                     reqUsersAdpt.clear();
@@ -257,9 +260,11 @@ Button sh;
                         try{
                             HashMap<String, Object> map = (HashMap<String, Object>) dataSnapshot.getValue();
                             if(map != null){
-                                String value = "";
+
                                 for(String key:map.keySet()){
+
                                     value = (String) map.get(key);
+
                                     reqUsersAdpt.add(convertEmailToString(value));
                                     reqUsersAdpt.notifyDataSetChanged();
                                     myRef.child("users").child(UserName).child("request").setValue(LoginUID);
@@ -280,12 +285,24 @@ Button sh;
     public void updateLoginUsers(DataSnapshot dataSnapshot){
         String key = "";
         Set<String> set = new HashSet<String>();
+
+
         Iterator i = dataSnapshot.getChildren().iterator();
 
         while(i.hasNext()){
-            key = ((DataSnapshot) i.next()).getKey();
+            String status;
+
+            DataSnapshot snapshot = ((DataSnapshot) i.next());
+            if(snapshot.hasChild("status"))
+            {
+                status = snapshot.child("status").getValue().toString();
+            }
+            else status = "offline";
+            key  = snapshot.getKey();
+
             if(!key.equalsIgnoreCase(UserName)) {
-                set.add(key);
+
+                set.add(key +"   - "+ status);
             }
         }
 
@@ -301,6 +318,8 @@ Button sh;
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+
+
 
     }
 
@@ -365,5 +384,14 @@ Button sh;
             }
         });
         b.show();
+    }
+
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+        userref.child(UserName).child("status").setValue("offline");
+
+
     }
 }

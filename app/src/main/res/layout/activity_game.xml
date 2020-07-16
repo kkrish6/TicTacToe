@@ -112,6 +112,7 @@
 
 
         android:text="Score"
+        android:textSize="21sp"
         android:textColor="@android:color/holo_red_light"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
         app:layout_constraintEnd_toEndOf="parent"

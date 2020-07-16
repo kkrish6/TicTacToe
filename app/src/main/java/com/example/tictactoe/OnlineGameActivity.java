@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class OnlineGameActivity extends AppCompatActivity {
-    Integer score1,score2;
+    Long score1,score2;
     TextView tvPlayer1, tvPlayer2;
  TextView onlinescore;
     String playerSession = "";
@@ -56,14 +56,14 @@ public class OnlineGameActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.hasChild("score"))
                 {
-                    String x = (String)dataSnapshot.child("score").getValue();
-                    score1 = Integer.parseInt(x);
+                    score1 = (Long)dataSnapshot.child("score").getValue();
+
 
                 }
                 else
                 {
-                    score1=0;
-                    userRef.child(OnlineLoginActivity.UserName).child("score").setValue(score1.toString());
+                    score1=0l;
+                    userRef.child(OnlineLoginActivity.UserName).child("score").setValue(score1);
                 }
                 onlinescore.setText("Overall Online Score:"+score1+"\t           Opponent Score:"+score2);
 
@@ -79,13 +79,12 @@ public class OnlineGameActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.hasChild("score"))
                 {
-                    String x = (String)dataSnapshot.child("score").getValue();
-                    score2=Integer.parseInt(x);
+                    score2 = (Long) dataSnapshot.child("score").getValue();
                 }
                 else
                 {
-                    score2=0;
-                    userRef.child(otherPlayer).child("score").setValue(score2.toString());
+                    score2=0l;
+                    userRef.child(otherPlayer).child("score").setValue(score2);
                 }
                 onlinescore.setText("Overall Online Score:"+score1+"\t           Opponent Score:"+score2);
 

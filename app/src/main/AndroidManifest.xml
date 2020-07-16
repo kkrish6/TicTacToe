@@ -12,11 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fastactivity"></activity>
+        <activity android:name=".LeaderboardActivity">
+
+        </activity>
+        <activity android:name=".fastactivity" />
         <activity
             android:name=".ui.login.fast"
             android:label="@string/title_activity_fast" />
-        <activity android:name=".searchActivity" />
         <activity android:name=".OnlineGameActivity" />
         <activity android:name=".OnlineLoginActivity">
             <intent-filter>
@@ -61,6 +63,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".MenuActivity"

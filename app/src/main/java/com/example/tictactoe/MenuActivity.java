@@ -51,4 +51,9 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(i);
 
     }
+
+    public void leader(View view) {
+        Intent i = new Intent(MenuActivity.this,LeaderboardActivity.class);
+        startActivity(i);
+    }
 }

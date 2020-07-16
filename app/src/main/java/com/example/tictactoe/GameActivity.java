@@ -432,10 +432,7 @@ public class GameActivity extends AppCompatActivity {
 
                 PlayGame(5,selectedImage);
             }
-            else if(emptyBlocks.isEmpty())
-            {
-                ResetGame();
-            }
+
 
 
 
@@ -463,11 +460,12 @@ public class GameActivity extends AppCompatActivity {
                 case 9:selectedImage = (ImageView) findViewById(R.id.iv_33);break;
             }
             PlayGame(selectedBlock,selectedImage);}
+
         }
     }
 
     private void showAlert(String Title) {
-      AlertDialog.Builder b =new AlertDialog.Builder(this,R.style.TransparentDialog);
+      AlertDialog.Builder b =new AlertDialog.Builder(this,R.style.Theme_AppCompat_DayNight_Dialog);
       b.setTitle(Title)
               .setMessage("start a new game?")
               .setPositiveButton("yes", new DialogInterface.OnClickListener() {
