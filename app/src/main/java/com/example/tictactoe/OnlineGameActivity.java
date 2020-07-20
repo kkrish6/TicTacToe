@@ -279,12 +279,12 @@ public class OnlineGameActivity extends AppCompatActivity {
             if(winner == 1){
                 ShowAlert(otherPlayer +" is winner");
                 score2++;
-                userRef.child(otherPlayer).child("score").setValue(score2.toString());
+                userRef.child(otherPlayer).child("score").setValue(score2);
 
             }else if(winner == 2){
                 ShowAlert("You won the game");
                 score1++;
-                userRef.child(OnlineLoginActivity.UserName).child("score").setValue(score1.toString());
+                userRef.child(OnlineLoginActivity.UserName).child("score").setValue(score1);
 
             }
             onlinescore.setText("Overall Online Score:"+score1+"\tOpponent Score"+score2);

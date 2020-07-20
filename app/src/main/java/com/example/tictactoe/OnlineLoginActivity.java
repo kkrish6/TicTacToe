@@ -104,7 +104,7 @@ Button sh;
         lv_requstedUsers = (ListView) findViewById(R.id.lv_requestedUsers);
         reqUsersAdpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list_requestedUsers);
         lv_requstedUsers.setAdapter(reqUsersAdpt);
-
+         viewPager =findViewById(R.id.viewPager);
 
         tvUserID = (TextView) findViewById(R.id.tvLoginUser);
 
@@ -302,7 +302,7 @@ Button sh;
 
             if(!key.equalsIgnoreCase(UserName)) {
 
-                set.add(key +"   - "+ status);
+                set.add(key);
             }
         }
 

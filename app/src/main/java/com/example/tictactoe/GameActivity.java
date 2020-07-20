@@ -561,4 +561,8 @@ public class GameActivity extends AppCompatActivity {
         }
 
     }
+
+    public void resbutton(View view) {
+        ResetGame();
+    }
 }

@@ -10,32 +10,56 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class UserListAdapter extends ArrayAdapter<String> {
+    private DatabaseReference userRef;
     public UserListAdapter(@NonNull Context context, @NonNull List objects) {
         super(context, 0, objects);
+        userRef = FirebaseDatabase.getInstance().getReference().child("users");
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
 
         }
 
-        TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
+        final TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
         tvName.setText(getItem(position));
-        if(getItem(position).contains("online"))
-        {
-            tvName.setBackgroundResource(R.color.colorAccent);
-        }
-        else if(getItem(position).contains("offline"))
-        {
-            tvName.setBackgroundResource(R.color.colorPrimary);
-        }
+        userRef.child(getItem(position)).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()&&dataSnapshot.hasChild("status")){
+                    String status2=dataSnapshot.child("status").getValue().toString();
+                    if(status2.equals("online"))
+                    {
+                        tvName.setBackgroundResource(R.color.colorAccent);
+                    }
+                    else
+                    {
+                        tvName.setBackgroundResource(R.color.coloroffline);
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         return convertView;
     }
 }

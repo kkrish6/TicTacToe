@@ -32,17 +32,23 @@ public class LeaderboardActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                long count =dataSnapshot.getChildrenCount();
+                long count =0;
                 for(DataSnapshot snapshot :dataSnapshot.getChildren())
                 {
 
                     if(snapshot.hasChild("score"))
                     {
-                        String x=count+"."+snapshot.getKey() +"\nScore:"+snapshot.child("score").getValue().toString();
+                        count++;
+                        String x=snapshot.getKey() +"\nScore:"+snapshot.child("score").getValue().toString();
                         scorelist.add(0,x);
-                        count--;
 
                     }
+                }
+                for(int i=0;i<count;i++)
+                {
+                    String x = scorelist.get(i);
+                    scorelist.remove(i);
+                    scorelist.add(i,i+1+"."+x);
                 }
                 arrayAdapter.notifyDataSetChanged();
 
