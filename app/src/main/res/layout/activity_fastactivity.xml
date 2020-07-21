@@ -42,7 +42,7 @@
 
         android:background="@android:color/holo_red_light"
         android:gravity="center"
-        android:text="Tap here fastly \nfind your count"
+        android:text="Tap here fastly \n and \nfind your count"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_clicks"
